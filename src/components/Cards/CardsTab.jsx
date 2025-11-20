@@ -9,7 +9,7 @@ function CardsTab() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await fetch('https://www.omdbapi.com/?s=batman&apikey=eb1faf9a');
+                const res = await fetch('https://www.omdbapi.com/?s=iron-man&apikey=eb1faf9a');
                 const data = await res.json();
                 setMovieData(data.Search || []);
                 console.log(data)

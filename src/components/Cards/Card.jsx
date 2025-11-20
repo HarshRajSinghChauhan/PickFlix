@@ -4,7 +4,7 @@ function Card({ data }) {
 
     return (
         <div className="w-68 bg-white shadow-xl rounded-lg p-3 m-3 shadow-pink-400 
-hover:shadow-pink-700 transition-all duration-900 hover:scale-105 hover:ease-in-out ">
+hover:shadow-pink-800 transition-all duration-900 hover:scale-105 hover:ease-in-out ">
 
             <div className="w-full h-40 overflow-hidden rounded">
                 <img
