@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Card({ data }) {
 
     if (!data) return null;
@@ -5,6 +7,9 @@ function Card({ data }) {
     return (
         <div className="w-68 bg-white shadow-xl rounded-lg p-3 m-3 shadow-pink-400 
         hover:shadow-pink-800 transition-all duration-900 hover:scale-105 hover:ease-in-out transform-gpu ">
+            {
+                console.log("Mounted")
+            }
 
             <div className="w-full h-40 overflow-hidden rounded">
                 <img
@@ -27,7 +32,7 @@ function Card({ data }) {
             </p>
 
             <div className="flex justify-center pt-2 pb-0">
-                <button className=" bg-blue-600 hover:bg-blue-700 text-white w-full p-1 cursor-pointer">More Info</button>
+                <Link to = {`/moreinfo/${data.imdbID}`} className=" text-center bg-blue-600 hover:bg-blue-700 text-white w-full p-1 cursor-pointer">More Info</Link>
             </div>
 
         </div>
@@ -36,4 +41,3 @@ function Card({ data }) {
 
 export default Card;
 
- 

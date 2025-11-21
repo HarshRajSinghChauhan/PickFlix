@@ -1,18 +1,26 @@
-import { useState } from 'react'
-
 import './App.css'
-import CardsTab from './components/Cards/CardsTab'
-import Navbar from './components/Navbar/Navbar'
-import SearchBar from './components/SearchBar/SearchBar'
+import Home from './pages/Home'
+import MoreInfo from './pages/MoreInfo'
+import { createBrowserRouter, RouterProvider } from "react-router";
+
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Home/>
+    },
+
+    {
+      path: "/moreinfo/:id",
+      element: <MoreInfo/>
+    },
+  ]
+);
 
 function App() {
 
-
   return (
-    <>
-      <Navbar />
-      <CardsTab />
-    </>
+    <RouterProvider router={router}/>
   )
 }
 
