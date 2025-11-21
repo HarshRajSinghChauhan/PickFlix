@@ -9,7 +9,7 @@ function CardsTab() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await fetch('https://www.omdbapi.com/?s=iron-man&apikey=eb1faf9a');
+                const res = await fetch('https://www.omdbapi.com/?s=avengers&apikey=eb1faf9a');
                 const data = await res.json();
                 setMovieData(data.Search || []);
                 console.log(data)
@@ -21,7 +21,7 @@ function CardsTab() {
     }, [])
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center my-4">
             {movieData.map((movie, index) => (
                 <Card key={index} data={movie} />
             ))}
