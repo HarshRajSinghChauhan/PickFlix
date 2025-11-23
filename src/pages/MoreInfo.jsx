@@ -21,10 +21,8 @@ function MoreInfo() {
 
   return (
     <div className="p-4 flex justify-center">
-      {/* Container */}
       <div className="bg-neutral-800 text-neutral-100 rounded-xl shadow-2xl p-6 max-w-5xl w-full flex flex-col md:flex-row gap-8">
 
-        {/* Poster */}
         <div className="flex justify-center md:w-1/3">
           <img
             src={movie?.Poster}
@@ -33,10 +31,8 @@ function MoreInfo() {
           />
         </div>
 
-        {/* Content */}
         <div className="md:w-2/3 flex flex-col justify-between">
 
-          {/* Main Info */}
           <div className="space-y-3">
             <h1 className="text-3xl font-bold">{movie.Title}</h1>
             <p className="text-neutral-300">{movie.Year} • {movie.Rated}</p>

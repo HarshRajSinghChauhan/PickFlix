@@ -1,32 +1,34 @@
-
 import { useEffect, useState } from 'react'
 import Card from './Card'
 
-function CardsTab() {
-
+function CardsTab({ searchTerm, type }) {
     const [movieData, setMovieData] = useState([]);
 
     useEffect(() => {
+        if (!searchTerm) return;
+
         const getData = async () => {
+            const url = `https://www.omdbapi.com/?s=${searchTerm}&type=${type}&apikey=eb1faf9a`;
+
             try {
-                const res = await fetch('https://www.omdbapi.com/?s=avengers&apikey=eb1faf9a');
+                const res = await fetch(url);
                 const data = await res.json();
                 setMovieData(data.Search || []);
-                console.log(data)
             } catch (err) {
-                console.log(err)
+                console.log(err);
             }
         };
+
         getData();
-    }, [])
+    }, [searchTerm, type]);
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center my-4">
-            {movieData.map((movie, index) => (
-                <Card key={index} data={movie} />
+        <div className="flex flex-wrap gap-4 justify-center">
+            {movieData.map((movie) => (
+                <Card key={movie.imdbID} data={movie} />
             ))}
         </div>
-    )
+    );
 }
 
 export default CardsTab

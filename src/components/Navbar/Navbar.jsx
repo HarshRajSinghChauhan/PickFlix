@@ -3,7 +3,7 @@ import logo from '../../assets/site-logo.png'
 import SearchBar from '../SearchBar/SearchBar'
 
 
-function Navbar() {
+function Navbar({ setSearchTerm, setType}) {
 
   const [openSearch, setOpenSearch] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -40,7 +40,7 @@ function Navbar() {
       </div>
 
       <div className={`flex justify-center pt-2 px-4 pb-0 overflow-hidden transition-all duration-800 
-                ${openSearch ? ' max-h-40 md:max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}><SearchBar /></div>
+                ${openSearch ? ' max-h-40 md:max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}><SearchBar setSearchTerm={setSearchTerm} setType={setType} /></div>
     </div>
   )
 }
